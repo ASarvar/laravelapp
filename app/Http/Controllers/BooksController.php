@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Book;
 use App\Http\Requests;
-use App\Category;
 
-class AdminCategoriesController extends Controller
+class BooksController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +16,9 @@ class AdminCategoriesController extends Controller
      */
     public function index()
     {
+        $books = Book::paginate(15);
 
-        $categories = Category::all();
-
-        return view('admin.categories.index', compact('categories'));
+        return view('home', compact('books'));
     }
 
     /**
@@ -32,7 +31,6 @@ class AdminCategoriesController extends Controller
         //
     }
 
-
     /**
      * Store a newly created resource in storage.
      *
@@ -41,9 +39,7 @@ class AdminCategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        Category::create($request->all());
-
-        return redirect('/admin/categories');
+        //
     }
 
     /**
@@ -65,9 +61,7 @@ class AdminCategoriesController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::findOrFail($id);;
-
-        return view('admin.categories.edit', compact('category'));
+        //
     }
 
     /**
@@ -79,12 +73,7 @@ class AdminCategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $category = Category::findOrFail($id); 
-
-        $category->update($request->all());
-
-        return redirect('/admin/categories');
+        //
     }
 
     /**
@@ -95,9 +84,6 @@ class AdminCategoriesController extends Controller
      */
     public function destroy($id)
     {
-        Category::findOrFail($id)->delete();
-
-        return redirect('/admin/categories');
-
+        //
     }
 }
