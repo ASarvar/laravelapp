@@ -14,10 +14,10 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Author</th>
-                        <th>name</th>
-                        <th>Published date</th>
+                    <th>Book Id</th>
+                    <th>Book Author</th>
+                    <th>Book Name</th>
+                    <th>Published date</th>
                         
                     </tr>
                 </thead>

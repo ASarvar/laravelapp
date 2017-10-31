@@ -12,12 +12,18 @@
 
             @if($books->count())
                 <thead>
-                    <th>Name</th>
+                    <th>Book Id</th>
+                    <th>Book Author</th>
+                    <th>Book Name</th>
+                    <th>Published date</th>
                 </thead>
                 <tbody>
                     @foreach($books as $book)
                     <tr>
-                        <td>{{ $book->book_name }}</td>
+                        <td>{{$book->book_id}}</td>
+                        <td>{{$book->book_author}}</td>
+                        <td>{{$book->book_name}}</td>
+                        <td>{{$book->book_published_at}}</td>
                     </tr>
                     @endforeach
                 </tbody>

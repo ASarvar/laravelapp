@@ -15,17 +15,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::auth();
+
+// Route::group(['middleware'=>'admin'], function(){
 
 Route::get('/home', 'BooksController@index');
 Route::get('/search', 'HomeController@search');
 
+// });
 
+// Route::group(['middleware'=>'user'], function(){
+
+// Route::get('/home', 'BooksController@index');
+// Route::get('/search', 'HomeController@search');
+
+// });
 
 Route::group(['middleware'=>'admin'], function(){
 
 	Route::get('/admin', function (){
-
 	return view('admin.index');
 
 });

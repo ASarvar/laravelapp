@@ -9,6 +9,7 @@ use App\Http\Requests\UsersEditRequest;
 use App\User;
 use App\Role;
 use App\Photo;
+use App\Book;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Session;
 class AdminUsersController extends Controller
