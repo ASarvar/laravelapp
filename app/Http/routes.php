@@ -24,14 +24,15 @@ Route::get('/home', 'BooksController@index');
 Route::get('/search', 'HomeController@search');
 
 // });
+Route::group(['middleware'=>'editor'], function(){
 
-// Route::group(['middleware'=>'user'], function(){
+Route::get('/editor', function (){
+	return view('editor.index');
+	});
 
-// Route::get('/home', 'BooksController@index');
-// Route::get('/search', 'HomeController@search');
+	Route::resource('editor/users', 'EditorUsersController');
 
-// });
-
+});
 Route::group(['middleware'=>'admin'], function(){
 
 	Route::get('/admin', function (){
@@ -46,6 +47,7 @@ Route::group(['middleware'=>'admin'], function(){
 	Route::resource('admin/categories', 'AdminCategoriesController');
 
 	Route::resource('books', 'BooksController');
+
 
 });
 

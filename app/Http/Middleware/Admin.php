@@ -24,7 +24,6 @@ class Admin
             
             }
         }
-
-        return redirect('/');
+        return redirect('/home');
     }
 }

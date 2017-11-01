@@ -47,6 +47,17 @@ class User extends Authenticatable
         return false;
 
     }
+    public function isEditor(){
+
+            if($this->role->name == "editor" && $this->is_active == 1){
+
+                return true;
+
+            }
+
+            return false;
+
+        }
 
     public function posts(){
 

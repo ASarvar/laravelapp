@@ -28,8 +28,19 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin';
 
+    //protected $redirectTo = '/admin';
+    
+
+    protected function authenticated($request, $user)
+    {
+        if($user->role_id === 1){
+            return redirect()->intended('/admin');
+        } else if($user->role_id === 2){
+            return redirect()->intended('/editor');
+        }
+        return redirect()->intended('/home');
+    }
     /**
      * Create a new authentication controller instance.
      *
