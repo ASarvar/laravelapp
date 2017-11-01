@@ -49,7 +49,7 @@ class User extends Authenticatable
     }
     public function isEditor(){
 
-            if($this->role->name == "editor" && $this->is_active == 1){
+            if($this->role->name == "editor" ||$this->role->name == "administrator" && $this->is_active == 1){
 
                 return true;
 
