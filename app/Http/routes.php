@@ -20,7 +20,7 @@ Route::auth();
 
 // Route::group(['middleware'=>'admin'], function(){
 
-Route::get('/home', 'BooksController@index');
+
 Route::get('/search', 'HomeController@search');
 
 // });
